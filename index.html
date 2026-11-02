@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berry Cream | Postres de Fresa Gourmet</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Poppins & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        berry: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            200: '#fecdd3',
+                            300: '#fda4af',
+                            400: '#fb7185',
+                            500: '#f43f5e',
+                            600: '#e63946', // Principal Rojo Fresa
+                            700: '#be123c',
+                            800: '#9f1239',
+                            900: '#881337',
+                        },
+                        cream: {
+                            50: '#fffcf7',
+                            100: '#fff8f0', // Fondo Crema Suave
+                            200: '#fdeed9',
+                            300: '#fcdcb8',
+                            400: '#f9be85',
+                        },
+                        pinksoft: {
+                            100: '#ffd1dc',
+                            200: '#f7cad0',
+                        },
+                        darkberry: '#2b2d42'
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+        }
+        .pattern-bg {
+            background-color: #fff8f0;
+            background-image: radial-gradient(#e63946 0.5px, transparent 0.5px), radial-gradient(#e63946 0.5px, #fff8f0 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            background-opacity: 0.05;
+        }
+    </style>
+</head>
+<body class="font-sans text-darkberry bg-cream-100 antialiased selection:bg-berry-600 selection:text-white">
+
+    <!-- HEADER / NAVBAR -->
+    <header class="sticky top-0 z-50 glass-card border-b border-pinksoft-200/60 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo Berrys Cream -->
+
+                    <div ></div>
+                    <div class="flex flex-col">
+                        <span class="font-serif font-bold text-2xl tracking-wide text-berry-600 leading-none">Berry</span>
+                        <span class="font-sans tracking-widest text-xs uppercase text-berry-800 font-semibold leading-tight">Cream</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-darkberry">
+                    <a href="#home" class="hover:text-berry-600 transition-colors py-1">Inicio</a>
+                    <a href="#nosotros" class="hover:text-berry-600 transition-colors py-1">Nosotros</a>
+                    <a href="#productos" class="hover:text-berry-600 transition-colors py-1">Productos</a>
+                    <a href="#corporativo" class="hover:text-berry-600 transition-colors py-1 flex items-center gap-1">
+                        <span>Elementos de Identidad</span>
+
+                    </a>
+                    <a href="#contacto" class="hover:text-berry-600 transition-colors py-1">Contacto</a>
+                </nav>
+
+                <!-- Action Button CTA -->
+                <div class="hidden sm:flex items-center space-x-3">
+                    <a href="#contacto" class="bg-berry-600 hover:bg-berry-700 text-white font-semibold text-sm px-5 py-2.5 rounded-full shadow-lg hover:shadow-berry-600/30 transition-all duration-300 transform hover:-translate-y-0.5 flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>¡Haz tu Pedido!</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-darkberry hover:text-berry-600 p-2 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cream-50 border-b border-pinksoft-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="mobile-link block py-2 text-base font-medium text-darkberry hover:text-berry-600">Inicio</a>
+            <a href="#nosotros" class="mobile-link block py-2 text-base font-medium text-darkberry hover:text-berry-600">Nosotros</a>
+            <a href="#productos" class="mobile-link block py-2 text-base font-medium text-darkberry hover:text-berry-600">Productos</a>
+            <a href="#corporativo" class="mobile-link block py-2 text-base font-medium text-berry-600 font-semibold">Portafolio Corporativo (11 Puntos)</a>
+            <a href="#contacto" class="mobile-link block py-2 text-base font-medium text-darkberry hover:text-berry-600">Contacto</a>
+            <a href="#contacto" class="w-full bg-berry-600 text-white font-semibold text-center py-3 rounded-full flex items-center justify-center gap-2 shadow">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                <span>¡Haz tu Pedido Ahora!</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- SECTION 1: HERO / INICIO -->
+        <section id="home" class="relative overflow-hidden pt-8 pb-16 lg:pt-16 lg:pb-28 pattern-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Text Content -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+
+
+                        <!-- 5-Second Clear Value Proposition -->
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-darkberry tracking-tight leading-tight">
+                           Postres que <span class="text-berry-600 underline decoration-pinksoft-200 decoration-wavy">brillan</span> una dulce maravilla
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-gray-700 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                            En <strong>Berrys Cream</strong> transformamos fresas seleccionadas a mano en experiencias dulces inolvidables..
+                        </p>
+
+                        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                            <a href="#productos" class="w-full sm:w-auto bg-berry-600 hover:bg-berry-700 text-white font-semibold px-8 py-4 rounded-full shadow-xl hover:shadow-berry-600/40 transition-all duration-300 text-center flex items-center justify-center gap-2">
+                                <span>Explorar Menú</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                            <a href="#corporativo" class="w-full sm:w-auto bg-white hover:bg-pinksoft-100 text-darkberry font-semibold px-8 py-4 rounded-full border-2 border-pinksoft-200 transition-all duration-300 text-center shadow-sm">
+                                Elementos de Identidad
+                            </a>
+                        </div>
+
+                        <!-- Trust Badge Banner -->
+                        <div class="pt-8 border-t border-pinksoft-200/80 grid grid-cols-3 gap-4 text-center sm:text-left">
+                            <div>
+                                <p class="text-2xl font-bold font-serif text-berry-600">100%</p>
+                             <p class="text-xs text-gray-600">Fresas Naturales</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-bold font-serif text-berry-600">Artensanal</p>
+                                <p class="text-xs text-gray-600">Receta Secreta</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-bold font-serif text-berry-600">100%</p>
+                                <p class="text-xs text-gray-600">Sonrisas Servidas</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visual Banner Graphic -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="relative mx-auto w-full max-w-md lg:max-w-none">
+                            <div class="absolute -top-4 -left-4 w-72 h-72 bg-pinksoft-100 rounded-full filter blur-2xl opacity-70"></div>
+                            <div class="absolute -bottom-4 -right-4 w-72 h-72 bg-berry-200 rounded-full filter blur-2xl opacity-60"></div>
+                            
+                            <div class="relative bg-white p-4 rounded-3xl shadow-2xl border-4 border-white overflow-hidden transform hover:scale-[1.02] transition-transform duration-500">
+                                <img src="https://scontent.fbog2-4.fna.fbcdn.net/v/t39.30808-6/865712645_122116958655498769_7567187367704954114_n.jpg?stp=dst-jpg_tt6&cstp=mx583x583&ctp=p526x296&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=TVZb3Llu-HkQ7kNvwG_vAPy&_nc_oc=AdqgOyPK1SgLkHN9fPYudPl0K9jac8mVmvO7yvZBh14aYIs2Vr6Bl9CKd10eg6bzWta2xwBKcBMVnELv-UGvWKSO&_nc_zt=23&_nc_ht=scontent.fbog2-4.fna&_nc_gid=0pLM2nPJPHKruTgscE4V6A&_nc_ss=7b2a8&oh=00_AQTd33BsiWNcJkLu6zebwS_DeQGv-0teVlabESg7IN0U3Q&oe=6AEE1F3D" 
+                                     alt="Fresas con Crema Berrys Cream" 
+                                     class="w-full h-[400px] object-cover rounded-2xl"
+                                     onerror="this.src='https://placehold.co/800x800/E63946/FFF8F0?text=Berrys+Cream+Postre'">
+
+                            </div>
+                            </div>
+                            </div>
+                      </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: SOBRE NOSOTROS / QUIÉNES SOMOS -->
+        <section id="nosotros" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-berry-600 mb-2">Nuestra Historia </h2>
+                    <p class="text-3xl sm:text-4xl font-serif font-bold text-darkberry">La Pasión por la Frescura y el Dulce Perfecto</p>
+                    <div class="w-20 h-1 bg-berry-600 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Historia -->
+                    <div class="bg-cream-100 p-8 rounded-3xl border border-pinksoft-200 hover:shadow-xl transition-shadow">
+                        <div class="w-14 h-14 bg-berry-600 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-md">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl text-darkberry mb-3">Quiénes Somos</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Nacimos como un equipo de tres unido por el amor por los sabores aut&eacute;nticos. En Berrys Cream fusionamos fresas de cultivo local con una rectea saludable autentica que resulta ligera e irresistiblemente cremosa.
+                        </p>
+                    </div>
+
+                    <!-- Misión -->
+                    <div class="bg-cream-100 p-8 rounded-3xl border border-pinksoft-200 hover:shadow-xl transition-shadow">
+                        <div class="w-14 h-14 bg-berry-600 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-md">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl text-darkberry mb-3">Nuestra Misión</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Brindar momentos de extrema felicidad a través de postres de alta calidad elaborados con la fresa más fresca, ofreciendo una experiencia gastronómica dulce, saludable y memorable.
+                        </p>
+                    </div>
+
+                    <!-- Visión -->
+                    <div class="bg-cream-100 p-8 rounded-3xl border border-pinksoft-200 hover:shadow-xl transition-shadow">
+                        <div class="w-14 h-14 bg-berry-600 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-md">
+                            <i class="fa-solid fa-crown"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl text-darkberry mb-3">Nuestra Visión</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Ser la marca líder y referente nacional en postres saludables a base de fresas, reconocida por la excelencia gastronomica, constante innovación y calidad insuperable.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: PRODUCTOS / MENÚ -->
+        <section id="productos" class="py-20 pattern-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                    <div>
+                        <h2 class="text-xs font-bold uppercase tracking-widest text-berry-600 mb-2">Menú Delicioso</h2>
+                        <p class="text-3xl sm:text-4xl font-serif font-bold text-darkberry">Nuestras Especialidades de Fresa</p>
+                    </div>
+                    <p class="text-gray-600 text-sm mt-4 md:mt-0 max-w-md">
+                        Cada postre se prepara al instante para garantizar la textura ideal y la combinación de sabor perfecta.
+                    </p>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <!-- Producto 1 -->
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-pinksoft-200 flex flex-col group hover:-translate-y-1 transition-all duration-300">
+                        <div class="relative overflow-hidden h-56">
+                            <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Fresas con Crema Tradicionales" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/600x600/E63946/FFF8F0?text=Fresas+Con+Crema'">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-serif font-bold text-lg text-darkberry mb-2">Postre de fresa personal</h3>
+                                <p class="text-gray-600 text-xs leading-relaxed mb-4">
+                                    Hecho de fesas silvestres y bañado en nuestra leche dondelsada
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                                <span class="text-xl font-bold font-serif text-berry-600">$2.000</span>
+                                <a href="#contacto" class="bg-cream-200 hover:bg-berry-600 hover:text-white text-darkberry text-xs font-semibold px-4 py-2 rounded-full transition-colors">Pedir</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 2 -->
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-pinksoft-200 flex flex-col group hover:-translate-y-1 transition-all duration-300">
+                        <div class="relative overflow-hidden h-56">
+                            <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Cheesecake de Fresa" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/600x600/E63946/FFF8F0?text=Cheesecake+Fresa'">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-serif font-bold text-lg text-darkberry mb-2">Personal Gigante</h3>
+                                <p class="text-gray-600 text-xs leading-relaxed mb-4">
+                                    Con mermelada artesanal de fresas enteras.
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                                <span class="text-xl font-bold font-serif text-berry-600">$3.000</span>
+                                <a href="#contacto" class="bg-cream-200 hover:bg-berry-600 hover:text-white text-darkberry text-xs font-semibold px-4 py-2 rounded-full transition-colors">Pedir</a>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+        </section>
+
+        <!-- SECTION 4: SECCIÓN CORPORATIVA Y ESTRATEGIA DE MARCA (11 PUNTOS REQUERIDOS) -->
+        <section id="corporativo" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="bg-berry-100 text-berry-700 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider">Proyecto e Identidad</span>
+                    <h2 class="text-3xl sm:text-5xl font-serif font-bold text-darkberry mt-3">Elementos de Identidad de Nuestra Marca </h2>
+                    <p class="text-gray-600 text-sm sm:text-base mt-4">
+                        Explora los elementos gráficos y publicitarios de **Berrys Cream** 
+                    </p>
+                </div>
+
+                <!-- Tabs Header -->
+                <div class="flex flex-wrap items-center justify-center gap-2 mb-10 border-b border-pinksoft-200 pb-4">
+                    <button class="corp-tab-btn active-tab bg-berry-600 text-white px-4 py-2 rounded-full text-xs font-medium transition-all" data-target="tab-1">1. Logo</button>
+                    <button class="corp-tab-btn bg-cream-100 hover:bg-pinksoft-100 text-darkberry px-4 py-2 rounded-full text-xs font-medium transition-all" data-target="tab-2">2. Inv. Mercado</button>
+                    <button class="corp-tab-btn bg-cream-100 hover:bg-pinksoft-100 text-darkberry px-4 py-2 rounded-full text-xs font-medium transition-all" data-target="tab-3">3. Hoja Membrete</button>
+                    <button class="corp-tab-btn bg-cream-100 hover:bg-pinksoft-100 text-darkberry px-4 py-2 rounded-full text-xs font-medium transition-all" data-target="tab-4">4. Brochure</button>
+                    <button class="corp-tab-btn bg-cream-100 hover:bg-pinksoft-100 text-darkberry px-4 py-2 rounded-full text-xs font-medium transition-all" data-target="tab-5">5. Volante</button>
+                    <button class="corp-tab-btn bg-cream-100 hover:bg-pinksoft-100 text-darkberry px-4 py-2 rounded-full text-xs font-medium transition-all" data-target="tab-6">6. Tarjeta</button>
+                    <button class="corp-tab-btn bg-cream-100 hover:bg-pinksoft-100 text-darkberry px-4 py-2 rounded-full text-xs font-medium transition-all" data-target="tab-7">7. Comerciales</button>
+                </div>
+
+                <!-- Tabs Content Display Area -->
+                <div class="bg-cream-100 rounded-3xl p-6 sm:p-10 border border-pinksoft-200 shadow-sm min-h-[420px]">
+                    
+                    <!-- 1. LOGO -->
+                    <div id="tab-1" class="corp-tab-content block space-y-6">
+                        <h3 class="text-2xl font-serif font-bold text-darkberry">Logo</h3>
+    <div class="bg-white p-6 rounded-2xl border border-pinksoft-200 flex flex-col md:flex-row gap-6 items-center">
+    <img src="https://scontent.fbog2-4.fna.fbcdn.net/v/t39.30808-6/865414566_122116941171498769_8740006606283791456_n.jpg?stp=dst-jpg_tt6&cstp=mx1920x1080&ctp=s1920x1080&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=qrdz56vGhcUQ7kNvwHdTfXA&_nc_oc=AdqMpDSsTp3UyAvpo2I1irmewHOf6EdLD5kiYbXcURS6pNei3oDbu2e1WUgDhardJ1-qD7d_V8qCs5se6UqLTO2K&_nc_zt=23&_nc_ht=scontent.fbog2-4.fna&_nc_gid=ewMuiAArzwxIsZAXhSIcrQ&_nc_ss=7b2a8&oh=00_AQT5ENkCJyBSAGUuBszZTEgf8IxfpXosy4FpKEARUuiDMw&oe=6AEE0514">               
+    </div>
+                    </div>
+
+                
+
+                    <!-- 2. TRABAJO DE INVESTIGACIÓN DE MERCADOS -->
+                  <div id="tab-2" class="corp-tab-content block space-y-6">
+                        <h3 class="text-2xl font-serif font-bold text-darkberry">Investigación de Mercado</h3>
+    <div class="bg-white p-6 rounded-2xl border border-pinksoft-200 flex flex-col md:flex-row gap-6 items-center">
+<iframe src="https://drive.google.com/file/d/1ULXioPecGUWeQeihwP0BMXagGwvkuCaM/view?usp=sharing" width="100%" height="600px">
+  Tu navegador no admite la visualización de PDFs. 
+  <a href="https://drive.google.com/file/d/1ULXioPecGUWeQeihwP0BMXagGwvkuCaM/view?usp=sharing">Descargar PDF</a>
+</iframe>
+    </div>
+                    </div>
+
+                        <!-- 3. membrete -->
+<div id="tab-3" class="corp-tab-content hidden space-y-6">
+    <h3 class="text-2xl font-serif font-bold text-darkberry">Hoja Membrete</h3>
+    <div class="bg-white p-6 rounded-2xl border border-pinksoft-200 flex flex-col md:flex-row gap-6 items-center">
+    <img src="https://scontent.fbog2-3.fna.fbcdn.net/v/t39.30808-6/886725669_122116920051498769_4662428924904729006_n.jpg?stp=dst-jpg_tt6&cstp=mx1414x2000&ctp=s1414x2000&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=tACwzO5gYx4Q7kNvwEgjxy3&_nc_oc=AdrxniWcMGyc7qFfe-q4T1uS1m5fFO2tYsnkoQHB_HynhZnTtbld-AYrpetV_9-QNbAXdFkcIt5DwZlDoSqV5Rz1&_nc_zt=23&_nc_ht=scontent.fbog2-3.fna&_nc_gid=igVZVX4K1dDaMJMAJZnnrg&_nc_ss=7b2a8&oh=00_AQSczqdFfVR88WbCVaQWQp_qA8T3_bkwu9DfTkxIortRJw&oe=6AEDE42D">               
+</div>
+</div>
+
+                    <!-- 4. BROCHURE -->
+                    <div id="tab-4" class="corp-tab-content hidden space-y-6">
+                        <h3 class="text-2xl font-serif font-bold text-darkberry"> Brochure</h3>
+                        <div class="bg-white p-6 rounded-2xl border border-pinksoft-200 flex flex-col md:flex-row gap-6 items-center">
+                        <img src="https://scontent.fbog2-3.fna.fbcdn.net/v/t39.30808-6/867340099_122116921665498769_723715554247281968_n.jpg?stp=dst-jpg_tt6&cstp=mx1600x1218&ctp=s1600x1218&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=VZWIKge2LvYQ7kNvwEojoFt&_nc_oc=Adqc7aSPCyIdTo8h_1CoJER94JOb8ts9P1NP7UIOlg-0amTm1eIZxnoyIEu77ABJTJCE2v6strNAVCfKpnSQ8UKr&_nc_zt=23&_nc_ht=scontent.fbog2-3.fna&_nc_gid=XdLYQWAcrn05ad_HgGnRDg&_nc_ss=7b2a8&oh=00_AQRu_XqaEXvXF7hDvdYrhL71CgKKhpcOOMDUniPBfGNNNg&oe=6AEDED87">
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl border border-pinksoft-200 flex flex-col md:flex-row gap-6 items-center">
+                        <img src="https://scontent.fbog2-5.fna.fbcdn.net/v/t39.30808-6/884391229_122116921893498769_6025803993492148913_n.jpg?stp=dst-jpg_tt6&cstp=mx1565x1110&ctp=s1565x1110&_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=UtFuf8VulB8Q7kNvwGDlA2x&_nc_oc=Adrz8v8zxXyVBMD17cMC65fEHbGBiRVMaPtJMgmUNYBw-LrqfbWxRKr3QN65Q9NlNg5PxoDDfupGwJkhttUy0r2U&_nc_zt=23&_nc_ht=scontent.fbog2-5.fna&_nc_gid=Dd7OhfhQePMmzVoRQjSHKQ&_nc_ss=7b2a8&oh=00_AQTsstLK-qLVliy_fUFVbM6Ndfycg2Z_CbyZ7rGT12_tBQ&oe=6AEDE424">
+                    </div>
+                    </div>
+
+                     <!-- 5. VOLANTE / FLYER -->
+
+                    <div id="tab-5" class="corp-tab-content hidden space-y-6">
+                        <h3 class="text-2xl font-serif font-bold text-darkberry"> Volante</h3>
+                        <div class="bg-white p-6 rounded-2xl border border-pinksoft-200 flex flex-col md:flex-row gap-6 items-center">
+                        <img src="https://scontent.fbog2-5.fna.fbcdn.net/v/t39.30808-6/881718436_122116927089498769_7885042787232285601_n.jpg?stp=dst-jpg_tt6&cstp=mx1483x1544&ctp=s1483x1544&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=43Ya6sWT73UQ7kNvwFJ2g8Y&_nc_oc=AdrlRWlRkaN0cRUO9jr4Ns60BbaJGEwxq-VbyheYuvdXMQs7Mwgaf2_78hdullfaGLk1evf5EB64Gm7YdyrTXvzs&_nc_zt=23&_nc_ht=scontent.fbog2-5.fna&_nc_gid=sxut_Ox3Dy4mtrhbV0mHXQ&_nc_ss=7b2a8&oh=00_AQTuj2x7nVsugBYzhZ0wSNMJynsIq6Ru6cPNwfwoUJ3a7Q&oe=6AEDEB25">
+                        </div>
+                    </div>
+
+                    <!-- 6. TARJETA DE PRESENTACIÓN -->
+                    <div id="tab-6" class="corp-tab-content hidden space-y-6">
+                        <h3 class="text-2xl font-serif font-bold text-darkberry"> Tarjeta de Presentación </h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                            <img src="https://scontent.fbog2-5.fna.fbcdn.net/v/t39.30808-6/880351891_122116919643498769_2448700770627878705_n.jpg?stp=dst-jpg_tt6&cstp=mx951x547&ctp=s951x547&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=ja8pBnWRPakQ7kNvwFW3IGP&_nc_oc=AdqZkTqkP5LgsnSs_rJ1WEWsf31JSireW_c_Be0d2PYbrK3Q66Z4qZ2vnYcY-OxLF59JcTsas5n7qNS2R2Y4Qoll&_nc_zt=23&_nc_ht=scontent.fbog2-5.fna&_nc_gid=8rMcsqXt1cWETEjExaRZvA&_nc_ss=7b2a8&oh=00_AQQIYVeZMiLPbR6dXSKh-8nVcbzbeODqW0_dDqaHRaKWFw&oe=6AEDE784">
+                         </div>
+                         </div>
+
+                    <!-- 7. COMERCIALES -->
+                    <div id="tab-7" class="corp-tab-content hidden space-y-6">
+                        <h3 class="text-2xl font-serif font-bold text-darkberry"> Comercial televisivo </h3>
+                        <div>
+                            <iframe src="https://youtu.be/U0-Wle6cpnA"></iframe>
+                        </div>
+                        <div>
+                             <h3 class="text-2xl font-serif font-bold text-darkberry"> Comercial radial </h3>
+                            <iframe src="https://www.facebook.com/reel/2002475847017658" ></iframe>
+                        </div>
+                        </div>
+
+                        </section>
+
+        <!-- SECTION 5: CONTACTO & UBICACIÓN -->
+        <section id="contacto" class="py-20 pattern-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    
+                    <!-- Formulario de Contacto -->
+                    <div class="lg:col-span-6 bg-white p-8 sm:p-10 rounded-3xl shadow-xl border border-pinksoft-200">
+                        <h3 class="text-2xl font-serif font-bold text-darkberry mb-2">¡Haz tu Pedido !</h3>
+                        <p class="text-xs text-gray-600 mb-6">Completa los datos y te responderemos al instante por WhatsApp o correo.</p>
+
+                        <form id="contact-form" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold text-darkberry mb-1">Nombre Completo</label>
+                                <input type="text" placeholder="Ej. María López" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-berry-600">
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-darkberry mb-1">WhatsApp</label>
+                                    <input type="tel" placeholder="+57 300 000 0000" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-berry-600">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-darkberry mb-1">Correo Electrónico</label>
+                                    <input type="email" placeholder="correo@.com" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-berry-600">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-darkberry mb-1">Detalles de tu Pedido o Mensaje</label>
+                                <textarea rows="3" placeholder="¿Para qué fecha necesitas tu evento?" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-berry-600"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-berry-600 hover:bg-berry-700 text-white font-bold py-3.5 rounded-xl shadow-lg transition-all duration-300">
+                                Enviar Pedido
+                            </button>
+                        </form>
+                        <div id="form-message" class="hidden mt-4 p-3 bg-green-100 text-green-800 rounded-xl text-xs font-medium text-center">
+                            ¡Gracias por escribirnos! Te contactaremos en breves minutos.
+                        </div>
+                    </div>
+
+                    <!-- Datos de Contacto y Mapa Google Embebido -->
+                    <div class="lg:col-span-6 space-y-6 flex flex-col justify-between">
+                        <div class="bg-white p-8 rounded-3xl shadow-xl border border-pinksoft-200 space-y-4">
+                            <h3 class="text-xl font-serif font-bold text-darkberry">Datos de Contacto </h3>
+                            <div class="space-y-3 text-sm">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-pinksoft-100 text-berry-600 flex items-center justify-center">
+                                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-gray-500">WhatsApp </p>
+                                        <p class="font-bold text-darkberry">+57 300 123 4567</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-pinksoft-100 text-berry-600 flex items-center justify-center">
+                                        <i class="fa-solid fa-location-dot text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-gray-500">Ubicación Local </p>
+                                        <p class="font-bold text-darkberry">Cl. 48j Sur #5h-08, Bogotá</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-pinksoft-100 text-berry-600 flex items-center justify-center">
+                                        <i class="fa-solid fa-envelope text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-gray-500">Correo Electrónico</p>
+                                        <p class="font-bold text-darkberry">Berry_cream@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Google Maps Responsive Placeholder / Embed -->
+                        <div class="bg-white p-3 rounded-3xl shadow-xl border border-pinksoft-200 h-64 overflow-hidden relative">
+                            <iframe 
+                                title="Ubicación Berrys Cream"
+                                class="w-full h-full rounded-2xl border-0"
+                                src="https://scontent.fbog2-5.fna.fbcdn.net/v/t39.30808-6/884252096_122116915239498769_7395419333463055184_n.jpg?stp=dst-jpg_tt6&cstp=mx780x546&ctp=s780x546&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=f727a1&_nc_ohc=-Lfcy3FJvTsQ7kNvwE8GISF&_nc_oc=Adr39Be5l4WBqwOEcF2_IqfBfQC958-tv5V7iEa8j42XDYsElpKuxgIzNN9minZ38YOPlWGCGrQI-tUMYQH-Ckhc&_nc_zt=23&_nc_ht=scontent.fbog2-5.fna&_nc_gid=rvuDEHhmeiYapW0y5urEMg&_nc_ss=7b2a8&oh=00_AQSnqDQKuW9Sfi8Oj0CUPfc4ytn9N8bZVI8KEIY4o0Qfkw&oe=6AEDC817" 
+                                allowfullscreen="" 
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-darkberry text-white pt-12 pb-8 border-t-4 border-berry-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 border-b border-gray-700 pb-8">
+                
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-berry-600 flex items-center justify-center text-white text-xl font-bold font-serif">
+                        <i class="fa-solid fa-strawberry"></i>
+                    </div>
+                    <div>
+                        <span class="font-serif font-bold text-xl text-white">Berry Cream</span>
+                        <p class="text-xs text-pinksoft-100">Postres de Fresa</p>
+                    </div>
+                </div>
+
+                <div class="flex space-x-6 text-xl">
+                    <a href="#" class="hover:text-berry-400 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-berry-400 transition-colors"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="hover:text-berry-400 transition-colors"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" class="hover:text-berry-400 transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="pt-6 text-center text-xs text-gray-400">
+                <p>&copy; 2026 Berry Cream. Todos los derechos reservados | Ofrecemos la mejor experiencia en postres.</p>
+                <p>@Berry_Cream </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a href="https://wa.me/573001234567?text=Hola%20Berrys%20Cream,%20quiero%20hacer%20un%20pedido" 
+       target="_blank" 
+       class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 transform hover:scale-110">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- JAVASCRIPT INTERACTIVO -->
+    <script>
+        // Toggle Menú Móvil
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Control de Pestañas Corporativas (11 Puntos)
+        const tabBtns = document.querySelectorAll('.corp-tab-btn');
+        const tabContents = document.querySelectorAll('.corp-tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remover estado activo de todos los botones
+                tabBtns.forEach(b => {
+                    b.classList.remove('bg-berry-600', 'text-white');
+                    b.classList.add('bg-cream-100', 'text-darkberry');
+                });
+
+                // Activar el botón seleccionado
+                btn.classList.remove('bg-cream-100', 'text-darkberry');
+                btn.classList.add('bg-berry-600', 'text-white');
+
+                // Ocultar todos los contenidos
+                tabContents.forEach(content => content.classList.add('hidden'));
+
+                // Mostrar el contenido objetivo
+                const targetId = btn.getAttribute('data-target');
+                document.getElementById(targetId).classList.remove('hidden');
+            });
+        });
+
+        // Formulario de Contacto
+        const contactForm = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            formMessage.classList.remove('hidden');
+            contactForm.reset();
+            setTimeout(() => {
+                formMessage.classList.add('hidden');
+            }, 5000);
+        });
+
+        // Reproductor de Audio Simulado para Spot Radial
+        const playBtn = document.getElementById('play-audio-btn');
+        const progressBar = document.getElementById('audio-progress');
+        let isPlaying = false;
+        let progressInterval;
+
+        if (playBtn) {
+            playBtn.addEventListener('click', () => {
+                isPlaying = !isPlaying;
+                const icon = playBtn.querySelector('i');
+
+                if (isPlaying) {
+                    icon.classList.remove('fa-play');
+                    icon.classList.add('fa-pause');
+                    let width = 0;
+                    progressInterval = setInterval(() => {
+                        if (width >= 100) {
+                            clearInterval(progressInterval);
+                            isPlaying = false;
+                            icon.classList.remove('fa-pause');
+                            icon.classList.add('fa-play');
+                            progressBar.style.width = '0%';
+                        } else {
+                            width += 3.33; // ~30 segundos simulados
+                            progressBar.style.width = width + '%';
+                        }
+                    }, 1000);
+                } else {
+                    icon.classList.remove('fa-pause');
+                    icon.classList.add('fa-play');
+                    clearInterval(progressInterval);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
